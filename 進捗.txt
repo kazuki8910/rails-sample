@@ -1,0 +1,2 @@
+データベースのGUIツールをインストールする
+table plusが良さげだけど、無理だったらDB Browser for SQLiteを使う
