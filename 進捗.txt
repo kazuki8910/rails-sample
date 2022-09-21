@@ -1,2 +1,1 @@
-データベースのGUIツールをインストールする
-table plusが良さげだけど、無理だったらDB Browser for SQLiteを使う
+データ追加のバリデーション作成

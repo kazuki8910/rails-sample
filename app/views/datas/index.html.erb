@@ -1,13 +1,49 @@
+<!-- データのインポート -->
 <div class="p-3">
   <form>
-    <div class="mb-3 mb-3">
-      <label for="formFile" class="form-label">データをインポート</label>
+    <div class="mb-3">
+      <p class="text fs-4 fw-bold">データをインポート</p>
       <input class="form-control" type="file" id="formFile">
     </div>
     <button type="submit" class="btn btn-primary">インポートする</button>
   </form>
 </div>
 
+<!-- 線 -->
+<div class="p-3">
+  <hr>
+</div>
+
+<!-- データの追加 -->
+<div class="p-3">
+  <%= form_tag('/datas/create', method: :post) do %>
+    <p class="text fs-4 fw-bold">データの追加</p>
+    <% @customer.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
+
+    <div class="row mb-3">
+      <div class="col">
+        <input type="text" class="form-control" id="create_name" name="create_name" placeholder="名前" value="<%= @form_data[:create_name] %>">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" id="create_age" name="create_age" placeholder="年齢" value="<%= @form_data[:create_age] %>">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" id="create_media" name="create_media" placeholder="媒体" value="<%= @form_data[:create_media] %>">
+      </div>
+      <div class="col"></div>
+    </div>
+    <button type="submit" class="btn btn-primary">追加</button>
+  <% end %>
+</div>
+
+<!-- 線 -->
+<div class="p-3">
+  <hr>
+</div>
+
+<!-- リスト -->
 <div class="p-3">
   <table class="table table-striped">
     <thead>
@@ -19,24 +55,24 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>田中 太郎</td>
-        <td>20</td>
-        <td>google</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>鈴木 次郎</td>
-        <td>25</td>
-        <td>facebook</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>佐々木 小次郎</td>
-        <td>30</td>
-        <td>google</td>
-      </tr>
+
+      <% @customers.each do |customer| %>
+        <tr>
+          <th scope="row">
+            <%= customer["id"] %>
+          </th>
+          <td>
+            <%= customer["name"] %>
+          </td>
+          <td>
+            <%= customer["age"] %>
+          </td>
+          <td>
+            <%= customer["media"] %>
+          </td>
+        </tr>
+        <% end %>
+
     </tbody>
   </table>
 </div>
