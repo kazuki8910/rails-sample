@@ -16,25 +16,21 @@
 
 <!-- データの追加 -->
 <div class="p-3">
-  <%= form_tag('/datas/create', method: :post) do %>
-    <p class="text fs-4 fw-bold">データの追加</p>
-    <% @customer.errors.full_messages.each do |message| %>
-      <%= message %>
-    <% end %>
-
+  <p class="text fs-4 fw-bold">データの追加</p>
+  <%= form_with model: @customer do |form| %>
     <div class="row mb-3">
       <div class="col">
-        <input type="text" class="form-control" id="create_name" name="create_name" placeholder="名前" value="<%= @form_data[:create_name] %>">
+        <%= form.text_field :name, :class=>'form-control', :placeholder=>'名前' %>
       </div>
       <div class="col">
-        <input type="text" class="form-control" id="create_age" name="create_age" placeholder="年齢" value="<%= @form_data[:create_age] %>">
+        <%= form.text_field :age, :class=>'form-control', :placeholder=>'年齢' %>
       </div>
       <div class="col">
-        <input type="text" class="form-control" id="create_media" name="create_media" placeholder="媒体" value="<%= @form_data[:create_media] %>">
+        <%= form.text_field :media, :class=>'form-control', :placeholder=>'媒体' %>
       </div>
       <div class="col"></div>
     </div>
-    <button type="submit" class="btn btn-primary">追加</button>
+    <%= form.submit '追加', :class=>'btn btn-primary' %>
   <% end %>
 </div>
 
