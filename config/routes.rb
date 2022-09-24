@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  # datas
-  get '/' => 'datas#index'
-  post 'datas/create' => 'datas#create'
+  # customers
+  get '/' => 'customers#index'
+  resources :customers
 
   # rails_admin(使い方分からない)
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
