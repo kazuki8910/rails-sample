@@ -75,7 +75,12 @@ end
 
 
 # 追加
+
+# rails admin
 gem 'devise'
 gem 'rails_admin'
 gem "sassc-rails"
 gem 'cancancan'
+
+# 日本語化
+gem 'rails-i18n'

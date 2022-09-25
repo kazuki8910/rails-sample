@@ -17,16 +17,39 @@
 <!-- データの追加 -->
 <div class="p-3">
   <p class="text fs-4 fw-bold">データの追加</p>
+
+  <!-- フォームの関数 -->
+  <%
+    # inputタグのクラス
+    def from_class(attribute)
+      if @customer.errors.full_messages_for(attribute).any?
+        return this_class = "form-control border border-danger"
+      else
+        return this_class = "form-control"
+      end
+    end
+  %>
+
+  <!-- 入力フォーム -->
   <%= form_with model: @customer do |form| %>
     <div class="row mb-3">
       <div class="col">
-        <%= form.text_field :name, :class=>'form-control', :placeholder=>'名前' %>
+        <%= form.text_field :name, :class=>from_class("name"), :placeholder=>'名前' %>
+        <% @customer.errors.full_messages_for("name").each do |msg| %>
+          <p class="text-danger ps-1 mb-0"><small><%= msg %></small></p>
+        <% end %>
       </div>
       <div class="col">
-        <%= form.text_field :age, :class=>'form-control', :placeholder=>'年齢' %>
+        <%= form.text_field :age, :class=>from_class("age"), :placeholder=>'年齢' %>
+        <% @customer.errors.full_messages_for("age").each do |msg| %>
+          <p class="text-danger ps-1 mb-0"><small><%= msg %></small></p>
+        <% end %>
       </div>
       <div class="col">
-        <%= form.text_field :media, :class=>'form-control', :placeholder=>'媒体' %>
+        <%= form.text_field :media, :class=>from_class("media"), :placeholder=>'媒体' %>
+        <% @customer.errors.full_messages_for("media").each do |msg| %>
+          <p class="text-danger ps-1 mb-0"><small><%= msg %></small></p>
+        <% end %>
       </div>
       <div class="col"></div>
     </div>
