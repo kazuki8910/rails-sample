@@ -1,3 +1,24 @@
+<!-- テストフォーム -->
+<div class="p-3">
+  <form action="http://127.0.0.1:3000/api/create" accept-charset="UTF-8" method="post">
+      <!-- <input type="hidden" name="authenticity_token" value="Pws9EkUH32k_DGhz5Qom51kLx-IEbACkbFJPa3O-kW3TgacJnZfHwIyKgwDfq2rPeUXTycaUphDm9nFqpsb8FA" autocomplete="off"> -->
+      <div class="row mb-3">
+      <div class="col">
+          <input class="form-control" placeholder="名前" type="text" name="customer[name]" id="customer_name">
+      </div>
+      <div class="col">
+          <input class="form-control" placeholder="年齢" type="text" name="customer[age]" id="customer_age">
+      </div>
+      <div class="col">
+          <input class="form-control" placeholder="媒体" type="text" name="customer[media]" id="customer_media">
+      </div>
+      <div class="col"></div>
+      </div>
+      <input type="submit" name="commit" value="追加" class="btn btn-primary" data-disable-with="追加">
+  </form>
+</div>
+
+
 <!-- データのインポート -->
 <div class="p-3">
   <form>

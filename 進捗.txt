@@ -1,1 +1,3 @@
-バリデーションのエラーメッセージ作成
+POSTリクエストでデータベース書き換え
+ →「application_controller.rb」で「protect_from_forgery with: :null_session」を入力することで誰でも書き換え出来る。
+   特定のドメインからしか書き換えられないように変更する。
