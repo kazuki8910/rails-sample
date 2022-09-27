@@ -1,1 +1,7 @@
 apiコントローラーで外部のリクエストを許可
+
+データの追加
+ action="http://127.0.0.1:3000/api/create"
+ 名前：name="customer[name]"
+ 年齢：age="customer[age]"
+ 媒体：media="customer[media]"

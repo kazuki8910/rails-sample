@@ -6,6 +6,19 @@ class ApisController < ApplicationController
     end
 
     def create
-        render json: {status: 'Sucess', message: 'create'}
+        @customer = Customer.create(customer_params)
+
+        if @customer.save
+            redirect_to('http://127.0.0.1:5500/_demo/thank_you.html')
+        else
+            @customers = Customer.all()
+            redirect_to('http://127.0.0.1:5500/_demo/')
+        end
+    end
+
+    private
+    
+    def customer_params
+        params.require(:customer).permit(:name, :age, :media)
     end
 end
