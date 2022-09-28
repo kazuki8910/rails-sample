@@ -2,6 +2,7 @@
  基幹システムを作る
 
 AWSにアップロード
+ →参照記事：https://pikawaka.com/rails/ec2_deploy
 
 データの編集、削除、CSVダウンロードができるようにする
 

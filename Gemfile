@@ -84,3 +84,8 @@ gem 'cancancan'
 
 # 日本語化
 gem 'rails-i18n'
+
+# unicorn
+group :production do
+  gem 'unicorn', '5.4.1'
+end
