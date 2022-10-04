@@ -16,6 +16,10 @@ class ApisController < ApplicationController
         end
     end
 
+    def env
+        redirect_to('/')
+    end
+
     private
     
     def customer_params

@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   # rails_admin(使い方分からない)
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
+
+  # awsのエラー回避
+  get "/.env" => 'apis#env'
 end
