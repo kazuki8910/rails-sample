@@ -5,3 +5,12 @@ apiコントローラーで外部のリクエストを許可
  名前：name="customer[name]"
  年齢：age="customer[age]"
  媒体：media="customer[media]"
+
+◆EC2に接続するコマンド（.sshディレクトリ内で）
+ssh -i rails-sample.pem ec2-user@18.178.105.228
+
+reak secret
+ 2f6e72ed6e8d7bb414cf60bd1a6018ed13f2cc891fed2f96b0f62e5a56b35b1cec10b5409bdc973fdd78a9265386934bb12d0b219ddc9007a8775d2136d1df6b
+
+ データベースパスワード
+ pwrara
